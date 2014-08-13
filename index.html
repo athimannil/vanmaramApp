@@ -25,8 +25,9 @@
       <h1 class="title">vanmaram</h1>
     </header>
     <div class="bar bar-standard bar-header-secondary">
-      <form onsubmit="return submitHandler()">
-        <input type="search" placeholder="Search" name="search_word" id="search_word" value="love">
+      <form onsubmit="return submitHandler();">
+      <!-- <form> -->
+        <input type="search" placeholder="Search" name="search_word" id="search_word">
         <button type="submit" class="btn" id="search" style="display: none;">Search</button>
       </form>
     </div>
@@ -35,10 +36,14 @@
     <div class="content">
       <div class="card">
         <ul id="result" class="table-view">
-        </ul>
+            <li class="table-view-cell">
+                <a href="result/answer.html" class="navigate-right suggested-word" data-transition="slide-in" onclick="return submitHandler('love');" data-search-word="love">love</a>
+            </li>           
+         </ul>
       </div>
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <!-- <script src="js/ratchet.min.js"></script> -->
     <script src="js/core.js"></script>
-    <script src="js/ratchet.min.js"></script>  </body>
+  </body>
 </html>
