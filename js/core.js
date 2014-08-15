@@ -33,6 +33,7 @@ searchWord.onkeyup = function(e){
 var submitHandler = function(wordFromLink) {
     if (wordFromLink){
         theWord = wordFromLink;
+        search_word.value = wordFromLink;
     }else{
         theWord = searchWord.value;
     }
