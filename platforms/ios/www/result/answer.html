@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vanmaram English Malayalam Dictionary</title>
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Include the compiled Ratchet CSS -->
+    <link href="css/ratchet.css" rel="stylesheet">
+    <!-- Include the compiled Ratchet JS -->
+  </head>
+  <body>
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class="bar bar-nav">
+      <!-- <button class="btn btn-link btn-nav pull-left">
+        <span class="icon icon-bars"></span>
+        Menu
+      </button>
+      <button class="btn btn-link btn-nav pull-right">
+        <span class="icon icon-plus"></span>
+      </button> -->
+      <a class="icon icon-left-nav pull-left" href="/manglish/index.html" data-transition="slide-out"></a>
+      <h1 class="title">vanmaram</h1>
+    </header>
+    <div class="bar bar-standard bar-header-secondary">
+      <form onsubmit="return submitHandler()">
+        <input type="search" placeholder="Search" name="search_word" id="search_word">
+        <button type="submit" class="btn" id="search" style="display: none;">Search</button>
+      </form>
+    </div>
+    
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content">
+      <div class="card">
+        <ul id="list-result" class="table-view"></ul>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/ratchet.min.js"></script>
+    <script src="js/core.js"></script>
+  </body>
+</html>
