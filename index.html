@@ -18,12 +18,16 @@
       <!-- <button class="btn btn-link btn-nav pull-left">
         <span class="icon icon-bars"></span>
         Menu
-      </button>
-      <button class="btn btn-link btn-nav pull-right">
-        <span class="icon icon-plus"></span>
       </button> -->
+      <!-- <a href="#infoModal" class="btn btn-link btn-nav pull-right">
+        <span class="icon icon-info"></span>
+      </a> -->
       <h1 class="title">vanmaram</h1>
     </header>
+    <div class="bar bar-standard bar-footer">
+      <a href="#infoModal" class="icon icon-info pull-left"></a>
+      <a href="#contactModal" class="icon icon-compose pull-right"></a>
+    </div>
     <div class="bar bar-standard bar-header-secondary">
       <form onsubmit="return submitHandler();">
       <!-- <form> -->
@@ -36,14 +40,55 @@
     <div class="content">
       <div class="card">
         <ul id="result" class="table-view">
-            <!-- <li class="table-view-cell">
-                <a href="result/answer.html" class="navigate-right suggested-word" data-transition="slide-in" onclick="return submitHandler('love');" data-search-word="love">love</a>
-            </li>  -->          
+            <li class="table-view-cell">Search word above</li> 
          </ul>
       </div>
     </div>
-    <!-- <script src="js/jquery.min.js"></script> -->
-    <!-- <script src="js/ratchet.min.js"></script> -->
-    <script src="js/core.js"></script>
+
+    <div id="infoModal" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#infoModal"></a>
+        <h1 class="title">About</h1>
+      </header>
+
+      <div class="content">
+        <p class="content-padded">The contents of my modal go here. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+      </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+      <header class="bar bar-nav">
+        <a class="btn btn-link pull-right" href="#contactModal">
+          <strong>Send</strong>
+        </a>
+        <a class="btn btn-link pull-left" href="#contactModal">
+          Cancel
+        </a>
+        <h1 class="title">Contact us</h1>
+      </header>
+
+      <div class="content">
+        <form class="input-group">
+          <input type="email" placeholder="Email">
+          <textarea rows="20" placeholder="Comment"></textarea>
+        </form>
+      </div>
+    </div>
+  <!-- <script src="js/jquery.min.js"></script> -->
+  <script src="js/ratchet.min.js"></script>
+  <script src="js/core.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
