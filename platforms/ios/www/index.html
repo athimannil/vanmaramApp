@@ -10,24 +10,24 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- Include the compiled Ratchet CSS -->
     <link href="css/ratchet.css" rel="stylesheet">
+    <link href="css/theme-ios.css" rel="stylesheet">
     <!-- Include the compiled Ratchet JS -->
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <script src="js/ratchet.min.js"></script>
+    <script src="js/core.js"></script>
   </head>
   <body>
     <!-- Make sure all your bars are the first things in your <body> -->
-    <header class="bar bar-nav">
+    <header class="bar bar-nav" style="background:#53a93f;">
       <!-- <button class="btn btn-link btn-nav pull-left">
-        <span class="icon icon-bars"></span>
-        Menu
+      <span class="icon icon-bars"></span>
+      Menu
       </button> -->
       <!-- <a href="#infoModal" class="btn btn-link btn-nav pull-right">
-        <span class="icon icon-info"></span>
+      <span class="icon icon-info"></span>
       </a> -->
-      <h1 class="title">vanmaram</h1>
+      <h1 class="title" style="color:#FFF;">vanmaram</h1>
     </header>
-    <div class="bar bar-standard bar-footer">
-      <a href="#infoModal" class="icon icon-info pull-left"></a>
-      <a href="#contactModal" class="icon icon-compose pull-right"></a>
-    </div>
     <div class="bar bar-standard bar-header-secondary">
       <form onsubmit="return submitHandler();">
       <!-- <form> -->
@@ -35,24 +35,38 @@
         <button type="submit" class="btn" id="search" style="display: none;">Search</button>
       </form>
     </div>
+    <div class="bar bar-standard bar-footer">
+      <a href="#infoModal" class="icon icon-info pull-left"></a>
+      <a href="#contactModal" class="icon icon-compose pull-right"></a>
+    </div>
     
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
     <div class="content">
+<<<<<<< HEAD
       <div class="card">
         <ul id="result" class="table-view">
             <li class="table-view-cell">Search word above</li> 
          </ul>
       </div>
+=======
+      <ul id="result" class="table-view">
+          <li class="table-view-cell">Search word above</li> 
+       </ul>
+>>>>>>> FETCH_HEAD
     </div>
 
     <div id="infoModal" class="modal">
       <header class="bar bar-nav">
         <a class="icon icon-close pull-right" href="#infoModal"></a>
-        <h1 class="title">About</h1>
+        <h1 class="title">About us</h1>
       </header>
 
       <div class="content">
-        <p class="content-padded">The contents of my modal go here. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+        <p class="content-padded">Vanmaram english to malayalam dictionary with thousands of words and its meaning.</p>
+        <p class="content-padded"><strong>Version:</strong> 1.0</p>
+        <p class="content-padded"><strong>Copyright:</strong> &copy; <script>document.write(new Date().getFullYear());</script> vanmaram.com</p>
+        <p class="content-padded"><strong>Website:</strong> <a href="http://www.vanmaram.com/">www.vanmaram.com</a></p>
+        <p class="content-padded"><strong>Developer:</strong> Muhammed Athimannil (<a href="http://www.athimannil.com/">www.athimannil.com</a>)</p>
       </div>
     </div>
 
@@ -74,8 +88,5 @@
         </form>
       </div>
     </div>
-  <!-- <script src="js/jquery.min.js"></script> -->
-  <script src="js/ratchet.min.js"></script>
-  <script src="js/core.js"></script>
   </body>
 </html>
