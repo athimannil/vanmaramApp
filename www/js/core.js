@@ -36,14 +36,11 @@ function getSearchValue (selectedWord) {
     } else {
         try {
             localStorage.setItem("name", selectedWord); //saves to the database, "key", "value"
-            console.log("added the word " + selectedWord);
-            // alert("added the word " + selectedWord);
         } catch (e) {
             if (e == QUOTA_EXCEEDED_ERR) {
                 alert('Quota exceeded!'); //data wasn't successfully saved due to quota exceed so throw an error
             }
         }
-        //document.write(localStorage.getItem("name")); //Hello World!
         // localStorage.removeItem("name"); //deletes the matching item from the database
     }
 }
@@ -80,7 +77,6 @@ function pushCallBack () {
         localStorage.removeItem("name");
     }
 }
-// search result list-result
 var submitHandler = function(wordFromLink) {
     if (wordFromLink){
         theWord = wordFromLink;
