@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>Vanmaram English Malayalam Dictionary</title>
     <!-- Sets initial viewport load and disables zooming  -->
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"> -->
     <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -12,6 +13,8 @@
     <link href="css/ratchet.css" rel="stylesheet">
     <link href="css/theme-ios.css" rel="stylesheet">
     <!-- Include the compiled Ratchet JS -->
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <script src="js/ratchet.min.js"></script>
   </head>
   <body>
     <!-- Make sure all your bars are the first things in your <body> -->
@@ -40,45 +43,26 @@
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
     <div class="content">
       <ul id="result" class="table-view">
-          <li class="table-view-cell">Search word above</li> 
-       </ul>
+        <li class="table-view-cell"><a href="answer.html" ontouchstart='getSearchValue("like");'>Search word above</a></li>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="answer.html" ontouchstart='getSearchValue("keey");' data-transition="slide-in">
+            <span class="media-object icon icon-pages pull-left"></span>
+            <div class="media-body">
+              All inboxes
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="answer.html" ontouchstart='getSearchValue("kooy");' data-transition="slide-in">
+            <span class="media-object icon icon-pages pull-left"></span>
+            <div class="media-body">
+              Second inbox
+            </div>
+          </a>
+        </li>
+      </ul>
     </div>
 
-    <div id="infoModal" class="modal">
-      <header class="bar bar-nav">
-        <a class="icon icon-close pull-right" href="#infoModal"></a>
-        <h1 class="title">About us</h1>
-      </header>
-
-      <div class="content">
-        <p class="content-padded">Vanmaram english to malayalam dictionary with thousands of words and its meaning.</p>
-        <p class="content-padded"><strong>Version:</strong> 1.0</p>
-        <p class="content-padded"><strong>Copyright:</strong> &copy; <script>document.write(new Date().getFullYear());</script> vanmaram.com</p>
-        <p class="content-padded"><strong>Website:</strong> <a href="http://www.vanmaram.com/">www.vanmaram.com</a></p>
-        <p class="content-padded"><strong>Developer:</strong> Muhammed Athimannil (<a href="http://www.athimannil.com/">www.athimannil.com</a>)</p>
-      </div>
-    </div>
-
-    <div id="contactModal" class="modal">
-      <header class="bar bar-nav">
-        <a class="btn btn-link pull-right" href="#contactModal">
-          <strong>Send</strong>
-        </a>
-        <a class="btn btn-link pull-left" href="#contactModal">
-          Cancel
-        </a>
-        <h1 class="title">Contact us</h1>
-      </header>
-
-      <div class="content">
-        <form class="input-group">
-          <input type="email" placeholder="Email">
-          <textarea rows="20" placeholder="Comment"></textarea>
-        </form>
-      </div>
-    </div>
-    <!-- <script src="js/jquery.min.js"></script> -->
-    <script src="js/ratchet.min.js"></script>
     <script src="js/core.js"></script>
   </body>
 </html>

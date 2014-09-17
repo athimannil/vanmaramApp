@@ -17,7 +17,9 @@ searchWord.onkeyup = function(e){
                 var decodedResp = JSON.parse(xmlhttp.responseText);
                 var resultLi = '';
                 for (i=0; i<decodedResp.length; i++){
-                    resultLi += "<li class='table-view-cell'><a class='navigate-right suggested-word' data-transition='slide-in' onClick='return submitHandler(\""+decodedResp[i]+"\");' data-search-word='"+decodedResp[i]+"'>"+decodedResp[i]+"</a></li>";
+                    // resultLi += "<li class='table-view-cell'><a class='navigate-right suggested-word' data-transition='slide-in' onClick='return submitHandler(\""+decodedResp[i]+"\");' data-search-word='"+decodedResp[i]+"'>"+decodedResp[i]+"</a></li>";
+                    // <a class="navigate-right" href="inbox.html" data-transition="slide-in" ontouchstart="logAlert('randamathedu');">
+                    resultLi += "<li class='table-view-cell'><a href='answer.html' class='navigate-right suggested-word' data-transition='slide-in' ontouchstart='getSearchValue(\""+decodedResp[i]+"\");' data-search-word='"+decodedResp[i]+"'>"+decodedResp[i]+"</a></li>";
                 }
                 resultUl.innerHTML = resultLi;
             }
@@ -28,8 +30,57 @@ searchWord.onkeyup = function(e){
         resultUl.style.display = 'none';
     }
 };
-
-// search result
+function getSearchValue (selectedWord) {
+    if (typeof (localStorage) == 'undefined') {
+        console.log('Your browser does not support HTML5 localStorage.Try upgrading.');
+    } else {
+        try {
+            localStorage.setItem("name", selectedWord); //saves to the database, "key", "value"
+            console.log("added the word " + selectedWord);
+            // alert("added the word " + selectedWord);
+        } catch (e) {
+            if (e == QUOTA_EXCEEDED_ERR) {
+                alert('Quota exceeded!'); //data wasn't successfully saved due to quota exceed so throw an error
+            }
+        }
+        //document.write(localStorage.getItem("name")); //Hello World!
+        // localStorage.removeItem("name"); //deletes the matching item from the database
+    }
+}
+// Only needed if you want to fire a callback
+window.addEventListener('push', pushCallBack);
+function pushCallBack () {
+    var theWord = localStorage.getItem('name');
+    if (theWord) {
+        var listResult = document.getElementById("list-result");
+        /*if (wordFromLink){
+            theWord = wordFromLink;
+            search_word.value = wordFromLink;
+        }else{
+            theWord = searchWord.value;
+        }*/
+        // console.log("koooooooy");
+        console.log("call back word "+ localStorage.getItem('name'));
+        listResult.style.display = 'none';
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function(){
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                // loadingSign.style.display = 'none';
+                listResult.style.display = 'block';
+                var decodedResp = JSON.parse(xmlhttp.responseText);
+                var resultLi = '';
+                for (i=0; i<decodedResp.length; i++){
+                    resultLi += "<li class='table-view-cell'>" + decodedResp[i] + "</li>";
+                }
+                listResult.innerHTML = resultLi;
+            }
+        };
+        xmlhttp.open("GET","http://www.vanmaram.com/json_result.php?en="+theWord,true);
+        xmlhttp.send();
+        localStorage.removeItem("name");
+    }
+}
+// search result list-result
 var submitHandler = function(wordFromLink) {
     if (wordFromLink){
         theWord = wordFromLink;
